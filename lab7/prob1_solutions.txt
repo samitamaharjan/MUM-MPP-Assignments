@@ -1,0 +1,6 @@
+1B. In the EmployeeInfo class, the list is adding new employee objects. And, equals method was overrided with an argument of Employee type. When comparing two lists of employee objects, it is comparing with two Objects. That's why it is giving false. 
+So, while overriding equals method in Employee class, the argument type should be Object instead of Employee. In that method, Object parameter should be downcasted to Employee type. Then, the result will be true.
+
+1C. While comparing or checking the values in HashMap, it always check on its index. And, the index is generated on the basis of hashcode. Employee class has only overrided equals method, but not hashcode. That is why, the result was false. If we override hashCode method, the result will be true.
+
+1D. The key in a HashMap should be immutable. In constrast, some of the keys (boolean Visited) were set "true" in removeDuplicates method the of class EmployeeInfo. The key value was changed with the same old hashcode. At the same time, the hashcode and equals method are comparing all the three pararmeters (name, salary and visited). Thus, the result is false. 
